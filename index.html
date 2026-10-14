@@ -2,44 +2,402 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GALADRIELLA GOGUADZE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça a trajetória e os projetos do SIGHT UFCG, voltados à tecnologia humanitária e ao impacto social.">
+  <title>SIGHT UFCG | Tecnologia com propósito</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff0f5;
-            color: #633b50;
-            text-align: center;
-            padding: 50px 20px;
-        }
+  <style>
+    :root {
+      --purple: #352451;
+      --lavender: #eee7f7;
+      --pink: #d9b9e8;
+      --white: #ffffff;
+      --text: #352d40;
+      --muted: #71697b;
+    }
 
-        h1 {
-            color: #d63384;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .cartao {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            max-width: 500px;
-            margin: 30px auto;
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-        a {
-            color: #d63384;
-        }
-    </style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #eee8f3;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--purple);
+      text-decoration: none;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #8655a6;
+    }
+
+    .hero {
+      background: var(--lavender);
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      color: #76528e;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      color: var(--purple);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      margin: 18px 0;
+      max-width: 750px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--purple);
+      color: var(--white);
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .button:hover {
+      background: #50366e;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-title {
+      color: var(--purple);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 32px;
+    }
+
+    .history {
+      border-left: 3px solid var(--pink);
+      padding: 4px 0 4px 24px;
+      max-width: 750px;
+    }
+
+    .history h3 {
+      color: var(--purple);
+      margin-bottom: 8px;
+    }
+
+    .projects {
+      background: #faf8fc;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid #e9e1f0;
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    .project-number {
+      color: #8b66a4;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .project-card h3 {
+      color: var(--purple);
+      font-size: 1.25rem;
+      margin: 8px 0;
+    }
+
+    .project-card p {
+      color: var(--muted);
+    }
+
+    .about-box {
+      background: var(--purple);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 36px;
+    }
+
+    .about-box h2 {
+      margin-bottom: 12px;
+    }
+
+    .about-box p {
+      color: #eee5f5;
+    }
+
+    .contact {
+      text-align: center;
+      background: var(--lavender);
+    }
+
+    .contact .section-intro {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      background: #241832;
+      color: #eee5f5;
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    footer p + p {
+      margin-top: 5px;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 68px 0;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-box {
+        padding: 26px;
+      }
+    }
+  </style>
 </head>
-<body>
-    <h1>Bem-vindos ao meu site!</h1>
 
-    <div class="cartao">
-        <h2>Sobre mim</h2>
-        <p>Meu nome é Galadriella e este é o meu primeiro site criado com GitHub Pages.</p>
-        <p>Estou aprendendo a criar páginas na internet!</p>
-        <a href="https://github.com/">Conheça meu GitHub</a>
+<body>
+  <header>
+    <nav class="container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio">
+        SIGHT UFCG
+        <span>TECNOLOGIA HUMANITÁRIA</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#historia">Trajetória</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Quem somos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <p class="eyebrow">SIGHT UFCG · Desde 2021</p>
+        <h1>Tecnologia com propósito. Impacto que transforma.</h1>
+        <p>
+          Somos um grupo dedicado à tecnologia humanitária,
+          conectando conhecimento, pessoas e iniciativas que
+          buscam contribuir para uma sociedade melhor.
+        </p>
+        <a class="button" href="#projetos">Conheça nossos projetos</a>
+      </div>
+    </section>
+
+    <section id="historia">
+      <div class="container">
+        <p class="eyebrow">Nossa história</p>
+        <h2 class="section-title">Uma trajetória de propósito</h2>
+        <p class="section-intro">
+          Desde 2021, o SIGHT UFCG constrói sua trajetória por
+          meio de iniciativas que aproximam tecnologia e impacto
+          social. Este espaço reunirá os marcos, as conquistas
+          e as pessoas que fazem parte dessa história.
+        </p>
+
+        <div class="history">
+          <h3>2021 — O início da trajetória</h3>
+          <p>
+            Início do período que marca a história do SIGHT UFCG.
+            Em breve, adicionaremos aqui os detalhes de sua
+            fundação e os primeiros marcos do grupo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projetos">
+      <div class="container">
+        <p class="eyebrow">O que fazemos</p>
+        <h2 class="section-title">Nossos projetos e iniciativas</h2>
+        <p class="section-intro">
+          Conheça algumas das iniciativas que fazem parte
+          da trajetória do SIGHT UFCG.
+        </p>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-number">PROJETO 01</span>
+            <h3>Visão SIGHT</h3>
+            <p>
+              Um espaço para apresentar os objetivos, as atividades
+              realizadas e os resultados desta iniciativa.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">PROJETO 02</span>
+            <h3>Letramento Digital</h3>
+            <p>
+              Iniciativa voltada à aprendizagem e ao desenvolvimento
+              de habilidades para o uso de tecnologias digitais.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">INICIATIVA 03</span>
+            <h3>IEEE Day</h3>
+            <p>
+              Registro das atividades, encontros e ações realizadas
+              em celebração à comunidade IEEE.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">AÇÃO SOLIDÁRIA 04</span>
+            <h3>Entrega de doações</h3>
+            <p>
+              Um espaço para registrar as ações solidárias,
+              as parcerias e as comunidades envolvidas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <div class="about-box">
+          <h2>Conhecimento a serviço das pessoas</h2>
+          <p>
+            O SIGHT faz parte do ecossistema IEEE e tem como foco
+            a tecnologia humanitária. No SIGHT UFCG, queremos
+            registrar e compartilhar uma trajetória construída
+            coletivamente, valorizando as iniciativas, as parcerias
+            e as pessoas envolvidas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container">
+        <p class="eyebrow">Vamos nos conectar</p>
+        <h2 class="section-title">Faça parte dessa trajetória</h2>
+        <p class="section-intro">
+          Em breve, disponibilizaremos aqui nossos canais oficiais
+          para contato, voluntariado e parcerias.
+        </p>
+        <!-- Adicione abaixo os links oficiais do grupo. -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>SIGHT UFCG</strong> · Tecnologia humanitária</p>
+      <p>Universidade Federal de Campina Grande</p>
+      <p>© 2026 SIGHT UFCG. Todos os direitos reservados.</p>
     </div>
+  </footer>
 </body>
 </html>
