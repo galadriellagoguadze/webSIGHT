@@ -1,20 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Conheça a trajetória e os projetos do SIGHT UFCG, voltados à tecnologia humanitária e ao impacto social.">
-  <title>SIGHT UFCG | Tecnologia com propósito</title>
+  <title>IEEE SIGHT UFCG | Tecnologia com propósito</title>
 
   <style>
     :root {
-      --purple: #352451;
-      --lavender: #eee7f7;
-      --pink: #d9b9e8;
-      --white: #ffffff;
-      --text: #352d40;
-      --muted: #71697b;
+      --blue: #006699;
+      --navy: #002855;
+      --orange: #F58220;
+      --light-blue: #F0F7FA;
+      --light-orange: #FFF5EB;
+      --white: #FFFFFF;
+      --text: #263746;
+      --muted: #5D6B78;
+      --border: #DCE5EB;
     }
 
     * {
@@ -46,14 +48,14 @@
 
     header {
       background: var(--white);
-      border-bottom: 1px solid #eee8f3;
+      border-bottom: 3px solid var(--orange);
       position: sticky;
       top: 0;
       z-index: 10;
     }
 
     nav {
-      min-height: 76px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -64,74 +66,104 @@
 
     .brand {
       font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--purple);
+      font-size: 1.35rem;
+      line-height: 1.2;
+      color: var(--navy);
       text-decoration: none;
     }
 
     .brand span {
       display: block;
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      color: var(--muted);
+      font-size: 0.68rem;
+      letter-spacing: 1.5px;
+      color: var(--blue);
+      margin-top: 5px;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 22px;
       flex-wrap: wrap;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
+      color: var(--navy);
+      transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: #8655a6;
+      color: var(--orange);
     }
 
     .hero {
-      background: var(--lavender);
+      background: var(--light-blue);
+      border-bottom: 1px solid var(--border);
       padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 28px solid rgba(245, 130, 32, 0.12);
+      border-radius: 50%;
+      right: -90px;
+      bottom: -110px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
-      color: #76528e;
+      color: var(--blue);
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 800;
     }
 
     h1 {
-      color: var(--purple);
+      color: var(--navy);
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       line-height: 1.1;
       margin: 18px 0;
-      max-width: 750px;
+      max-width: 780px;
+    }
+
+    h1 span {
+      color: var(--orange);
     }
 
     .hero p {
       max-width: 650px;
       font-size: 1.1rem;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     .button {
       display: inline-block;
-      background: var(--purple);
-      color: var(--white);
+      background: var(--orange);
+      color: var(--navy);
       text-decoration: none;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: 700;
+      padding: 13px 23px;
+      border-radius: 6px;
+      font-weight: 800;
+      border: 2px solid var(--orange);
+      transition: background 0.2s, color 0.2s;
     }
 
     .button:hover {
-      background: #50366e;
+      background: var(--white);
+      color: var(--navy);
     }
 
     section {
@@ -139,81 +171,109 @@
     }
 
     .section-title {
-      color: var(--purple);
+      color: var(--navy);
       font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin-bottom: 14px;
+      margin: 12px 0 14px;
       line-height: 1.2;
     }
 
     .section-intro {
       color: var(--muted);
-      max-width: 700px;
+      max-width: 720px;
       margin-bottom: 32px;
     }
 
+    .orange-line {
+      width: 65px;
+      height: 5px;
+      background: var(--orange);
+      border-radius: 3px;
+      margin: 18px 0;
+    }
+
     .history {
-      border-left: 3px solid var(--pink);
+      border-left: 4px solid var(--orange);
       padding: 4px 0 4px 24px;
       max-width: 750px;
     }
 
     .history h3 {
-      color: var(--purple);
+      color: var(--blue);
       margin-bottom: 8px;
     }
 
     .projects {
-      background: #faf8fc;
+      background: var(--light-blue);
     }
 
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+      gap: 22px;
     }
 
     .project-card {
       background: var(--white);
-      border: 1px solid #e9e1f0;
-      border-radius: 14px;
-      padding: 26px;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--blue);
+      border-radius: 10px;
+      padding: 27px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:nth-child(even) {
+      border-top-color: var(--orange);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 40, 85, 0.08);
     }
 
     .project-number {
-      color: #8b66a4;
-      font-size: 0.8rem;
+      color: var(--blue);
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
     .project-card h3 {
-      color: var(--purple);
-      font-size: 1.25rem;
-      margin: 8px 0;
+      color: var(--navy);
+      font-size: 1.3rem;
+      margin: 10px 0;
     }
 
     .project-card p {
       color: var(--muted);
     }
 
+    .about-section {
+      background: var(--white);
+    }
+
     .about-box {
-      background: var(--purple);
+      background: var(--navy);
       color: var(--white);
-      border-radius: 16px;
-      padding: 36px;
+      border-radius: 12px;
+      padding: 42px;
+      border-left: 7px solid var(--orange);
     }
 
     .about-box h2 {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      line-height: 1.25;
     }
 
     .about-box p {
-      color: #eee5f5;
+      color: #E5EEF5;
+      max-width: 850px;
     }
 
     .contact {
       text-align: center;
-      background: var(--lavender);
+      background: var(--light-orange);
+      border-top: 1px solid #F5DFC9;
     }
 
     .contact .section-intro {
@@ -221,25 +281,40 @@
       margin-right: auto;
     }
 
+    .contact .eyebrow {
+      color: var(--blue);
+    }
+
     footer {
-      background: #241832;
-      color: #eee5f5;
-      padding: 28px 0;
+      background: var(--navy);
+      color: var(--white);
+      padding: 30px 0;
       text-align: center;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
     }
 
     footer p + p {
       margin-top: 5px;
     }
 
+    footer strong {
+      color: var(--orange);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 4px;
+    }
+
     @media (max-width: 650px) {
       nav {
         align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
       }
 
       .nav-links {
-        gap: 12px;
+        gap: 12px 18px;
       }
 
       .hero {
@@ -255,7 +330,7 @@
       }
 
       .about-box {
-        padding: 26px;
+        padding: 28px;
       }
     }
   </style>
@@ -265,7 +340,7 @@
   <header>
     <nav class="container" aria-label="Navegação principal">
       <a class="brand" href="#inicio">
-        SIGHT UFCG
+        IEEE SIGHT UFCG
         <span>TECNOLOGIA HUMANITÁRIA</span>
       </a>
 
@@ -281,14 +356,20 @@
 
   <main>
     <section class="hero" id="inicio">
-      <div class="container">
-        <p class="eyebrow">SIGHT UFCG · Desde 2021</p>
-        <h1>Tecnologia com propósito. Impacto que transforma.</h1>
+      <div class="container hero-content">
+        <p class="eyebrow">IEEE SIGHT UFCG · Desde 2021</p>
+
+        <h1>
+          Tecnologia com propósito.
+          <span>Impacto que transforma.</span>
+        </h1>
+
         <p>
           Somos um grupo dedicado à tecnologia humanitária,
           conectando conhecimento, pessoas e iniciativas que
           buscam contribuir para uma sociedade melhor.
         </p>
+
         <a class="button" href="#projetos">Conheça nossos projetos</a>
       </div>
     </section>
@@ -297,6 +378,8 @@
       <div class="container">
         <p class="eyebrow">Nossa história</p>
         <h2 class="section-title">Uma trajetória de propósito</h2>
+        <div class="orange-line"></div>
+
         <p class="section-intro">
           Desde 2021, o SIGHT UFCG constrói sua trajetória por
           meio de iniciativas que aproximam tecnologia e impacto
@@ -307,9 +390,10 @@
         <div class="history">
           <h3>2021 — O início da trajetória</h3>
           <p>
-            Início do período que marca a história do SIGHT UFCG.
-            Em breve, adicionaremos aqui os detalhes de sua
-            fundação e os primeiros marcos do grupo.
+            Este é o ano que marca o início da trajetória do
+            SIGHT UFCG. Em breve, adicionaremos mais informações
+            sobre a fundação, os primeiros projetos e os marcos
+            importantes do grupo.
           </p>
         </div>
       </div>
@@ -319,6 +403,8 @@
       <div class="container">
         <p class="eyebrow">O que fazemos</p>
         <h2 class="section-title">Nossos projetos e iniciativas</h2>
+        <div class="orange-line"></div>
+
         <p class="section-intro">
           Conheça algumas das iniciativas que fazem parte
           da trajetória do SIGHT UFCG.
@@ -364,13 +450,13 @@
       </div>
     </section>
 
-    <section id="sobre">
+    <section class="about-section" id="sobre">
       <div class="container">
         <div class="about-box">
           <h2>Conhecimento a serviço das pessoas</h2>
           <p>
-            O SIGHT faz parte do ecossistema IEEE e tem como foco
-            a tecnologia humanitária. No SIGHT UFCG, queremos
+            O IEEE SIGHT faz parte do ecossistema IEEE e tem como
+            foco a tecnologia humanitária. No SIGHT UFCG, queremos
             registrar e compartilhar uma trajetória construída
             coletivamente, valorizando as iniciativas, as parcerias
             e as pessoas envolvidas.
@@ -383,18 +469,20 @@
       <div class="container">
         <p class="eyebrow">Vamos nos conectar</p>
         <h2 class="section-title">Faça parte dessa trajetória</h2>
+
         <p class="section-intro">
           Em breve, disponibilizaremos aqui nossos canais oficiais
           para contato, voluntariado e parcerias.
         </p>
-        <!-- Adicione abaixo os links oficiais do grupo. -->
+
+        <!-- Adicione aqui os links oficiais do grupo. -->
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <p><strong>SIGHT UFCG</strong> · Tecnologia humanitária</p>
+      <p><strong>IEEE SIGHT UFCG</strong> · Tecnologia humanitária</p>
       <p>Universidade Federal de Campina Grande</p>
       <p>© 2026 SIGHT UFCG. Todos os direitos reservados.</p>
     </div>
